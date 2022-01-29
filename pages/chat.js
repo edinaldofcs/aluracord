@@ -26,6 +26,7 @@ export default function ChatPage() {
             id: 1,
             de: "msgimgload",
             texto: 'msgimgload',
+            hora: '',
         }
 
     ]);
@@ -56,8 +57,7 @@ export default function ChatPage() {
             const mensagem = {
                 //id: listaMensagem.length + 1,
                 de: user,
-                texto: novaMensagem,
-
+                texto: novaMensagem,                
             };
 
             supabaseClient
@@ -437,7 +437,7 @@ function MessageList(props) {
                                 }}>
                                 {mensagem.de}
                             </a>
-                            
+
                             <Text
                                 styleSheet={{
                                     fontSize: '14px',
@@ -447,7 +447,7 @@ function MessageList(props) {
                                 }}
                                 tag="span"
                             >
-                                {(new Date().toLocaleDateString())} - {(new Date().getHours())}:{(new Date().getMinutes())}
+                                {(new Date().toLocaleDateString())} - {mensagem.hora.substr(0, 5)}
                             </Text>
                         </Box>
                         {/* logica para carregar sticker */}
