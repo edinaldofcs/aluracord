@@ -498,13 +498,14 @@ function DadosDosUsuarios(props) {
                 flexDirection: 'row',
                 width: 'fit-content',
                 minWidth:'280px',
-                height: '170px',
+                minHeight: '170px',
                 position: 'fixed',
                 top: '2%',
                 left: '3%',
                 backgroundColor: 'orange',
                 border: '4px solid #ccc',
-                paddingRight: '30px'
+                paddingRight: '30px',
+                paddingBottom: '15px'
             }}
         >
 
@@ -532,7 +533,7 @@ function DadosDosUsuarios(props) {
             </Text>
             <Text
                 styleSheet={{
-                    margin: '20px 15px',
+                    margin: '12px 15px',
                     paddingLeft: '5px',
                     position: 'absolute',
                     top: '14vh',
