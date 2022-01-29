@@ -333,9 +333,10 @@ function MessageList(props) {
                         tag="li"
                         styleSheet={{
                             borderRadius: '5px',
-                            padding: '6px',
+                            padding: '6px 15px 6px 6px',
                             marginBottom: '12px',
                             backgroundColor: appConfig.theme.colors.neutrals[900],
+                            width:'fit-content',
                             hover: {
                                 backgroundColor: appConfig.theme.colors.neutrals[700],
                             }
@@ -495,13 +496,15 @@ function DadosDosUsuarios(props) {
             styleSheet={{
                 display: 'flex',
                 flexDirection: 'row',
-                width: '280px',
+                width: 'fit-content',
+                minWidth:'280px',
                 height: '170px',
                 position: 'fixed',
                 top: '2%',
                 left: '3%',
                 backgroundColor: 'orange',
-                border: '4px solid #ccc'
+                border: '4px solid #ccc',
+                paddingRight: '30px'
             }}
         >
 
@@ -510,7 +513,8 @@ function DadosDosUsuarios(props) {
                     maxHeight: '12vh',
                     maxWidth: '12vh',
                     margin: '20px',
-                    borderRadius: '50%'
+                    borderRadius: '50%',
+                    border:'2px solid #ccc'
                 }}
 
                 src={`${infos.avatar}`} />
@@ -523,7 +527,7 @@ function DadosDosUsuarios(props) {
                 }}
                 tag="span"
             >
-                Seguidores: {infos.followers}<p><hr style={{ margin: '5px 0', opacity: '0%' }}></hr>Seguindo: {infos.following}</p><p><hr style={{ margin: '5px 0', opacity: '0%' }}></hr>Repositorios: {infos.repositories}</p>
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white' }}>Seguidores: {infos.followers}</p><p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px' }}>Seguindo: {infos.following}</p><p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px' }}>Repositorios: {infos.repositories}</p>
 
             </Text>
             <Text
@@ -536,7 +540,7 @@ function DadosDosUsuarios(props) {
                 }}
                 tag="span"
             >
-                Nome: {infos.name}
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white'}}>Nome: {infos.name}</p>
             </Text>
 
         </Box>
