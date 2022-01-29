@@ -498,53 +498,48 @@ function DadosDosUsuarios(props) {
                 flexDirection: 'row',
                 width: 'fit-content',
                 minWidth:'300px',
-                minHeight: '170px',
+                height:'auto',
                 position: 'fixed',
                 top: '2%',
                 left: '3%',
                 backgroundColor: 'orange',
                 border: '4px solid #ccc',
                 paddingRight: '30px',
-                paddingBottom: '15px'
             }}
         >
 
+            
+            <Text
+                styleSheet={{
+                    margin: '20px 10px',
+                    height: 'fit-content',
+                    color: 'black',
+                    left:'0'
+                }}
+                tag="span"
+            >
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginLeft: '120px' }}>Seguidores: {infos.followers}</p>
+
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px', marginLeft: '120px'  }}>Seguindo: {infos.following}</p>
+
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px', marginLeft: '120px'  }}>Repositorios: {infos.repositories}</p>
+
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '10px',  }}>Nome: {infos.name}</p>
+
+            </Text>
             <Image
                 styleSheet={{
                     maxHeight: '12vh',
                     maxWidth: '12vh',
                     margin: '20px',
                     borderRadius: '50%',
-                    border:'2px solid #ccc'
+                    border:'2px solid #ccc',
+                    position:'absolute',
+                    left:'0'
                 }}
 
                 src={`${infos.avatar}`} />
-            <Text
-                styleSheet={{
-                    margin: '20px 0',
-                    position: 'relative',
-                    height: 'fit-content',
-                    color: 'black',
-                }}
-                tag="span"
-            >
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white' }}>Seguidores: {infos.followers}</p><p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px' }}>Seguindo: {infos.following}</p><p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px' }}>Repositorios: {infos.repositories}</p>
-
-            </Text>
-            <Text
-                styleSheet={{
-                    margin: '12px 15px',
-                    padding:'4px 8px', 
-                    borderRadius:'15px',
-                    position: 'absolute',
-                    top: '15.1vh',
-                    color: 'white',
-                    backgroundColor: 'rgb(40,40, 40)'
-                }}
-                tag="span"
-            >
-                Nome: {infos.name}
-            </Text>
+            
 
         </Box>
     )
