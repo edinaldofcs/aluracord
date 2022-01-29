@@ -335,8 +335,8 @@ function MessageList(props) {
                             borderRadius: '5px',
                             padding: '6px 15px 6px 6px',
                             marginBottom: '12px',
-                            backgroundColor: appConfig.theme.colors.neutrals[900],
-                            width:'fit-content',
+                            backgroundColor: 'rgba(30,30,30,0.6)',
+                            width: 'fit-content',
                             hover: {
                                 backgroundColor: appConfig.theme.colors.neutrals[700],
                             }
@@ -429,31 +429,25 @@ function MessageList(props) {
                                     ''
                                 )}
 
-
-                            <Text tag="strong"
-                                styleSheet={{
-                                    margin: '0 10px',
-                                    hover: {
-                                        cursor: 'pointer',
-                                        color: appConfig.theme.colors.neutrals[400],
-                                    }
-                                }}
-                            >
-
-                                <a href={appRestrict.imgGit +  mensagem.de} target={'_blank'} style={{textDecoration: 'none', color: 'white'}}>
-                                    {mensagem.de}
-                                    </a>
-                            </Text>
+                            <a href={appRestrict.imgGit + mensagem.de}
+                                target={'_blank'}
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'white',
+                                }}>
+                                {mensagem.de}
+                            </a>
+                            
                             <Text
                                 styleSheet={{
-                                    fontSize: '10px',
+                                    fontSize: '14px',
                                     marginLeft: '8px',
                                     marginTop: '2px',
                                     color: appConfig.theme.colors.neutrals[300],
                                 }}
                                 tag="span"
                             >
-                                {(new Date().toLocaleDateString())}
+                                {(new Date().toLocaleDateString())} - {(new Date().getHours())}:{(new Date().getMinutes())}
                             </Text>
                         </Box>
                         {/* logica para carregar sticker */}
@@ -497,8 +491,8 @@ function DadosDosUsuarios(props) {
                 display: 'flex',
                 flexDirection: 'row',
                 width: 'fit-content',
-                minWidth:'300px',
-                height:'auto',
+                minWidth: '300px',
+                height: 'auto',
                 position: 'fixed',
                 top: '2%',
                 left: '3%',
@@ -508,40 +502,40 @@ function DadosDosUsuarios(props) {
             }}
         >
 
-            
+
             <Text
                 styleSheet={{
                     margin: '20px 10px',
                     height: 'fit-content',
                     color: 'black',
-                    left:'0'
+                    left: '0'
                 }}
                 tag="span"
             >
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginLeft: '120px' }}>Seguidores: {infos.followers}</p>
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding: '4px 8px', borderRadius: '15px', color: 'white', marginLeft: '120px' }}>Seguidores: {infos.followers}</p>
 
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px', marginLeft: '120px'  }}>Seguindo: {infos.following}</p>
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding: '4px 8px', borderRadius: '15px', color: 'white', marginTop: '3px', marginLeft: '120px' }}>Seguindo: {infos.following}</p>
 
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px', marginLeft: '120px'  }}>Repositorios: {infos.repositories}</p>
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding: '4px 8px', borderRadius: '15px', color: 'white', marginTop: '3px', marginLeft: '120px' }}>Repositorios: {infos.repositories}</p>
 
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '12px',  }}>Nome: {infos.name}</p>
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding: '4px 8px', borderRadius: '15px', color: 'white', marginTop: '12px', }}>Nome: {infos.name}</p>
 
                 <Image
-                styleSheet={{
-                    Height: '100px',
-                    Width: '100px',
-                    margin: '10px 0px 0px 10px',
-                    borderRadius: '50%',
-                    border:'2px solid #ccc',
-                    position:'absolute',
-                    left:'0',
-                    top:'0'
-                }}
+                    styleSheet={{
+                        Height: '100px',
+                        Width: '100px',
+                        margin: '10px 0px 0px 10px',
+                        borderRadius: '50%',
+                        border: '2px solid #ccc',
+                        position: 'absolute',
+                        left: '0',
+                        top: '0'
+                    }}
 
-                src={`${infos.avatar}`} />
+                    src={`${infos.avatar}`} />
             </Text>
-            
-            
+
+
 
         </Box>
     )
