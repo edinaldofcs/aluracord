@@ -497,7 +497,7 @@ function DadosDosUsuarios(props) {
                 display: 'flex',
                 flexDirection: 'row',
                 width: 'fit-content',
-                minWidth:'280px',
+                minWidth:'300px',
                 minHeight: '170px',
                 position: 'fixed',
                 top: '2%',
@@ -534,14 +534,16 @@ function DadosDosUsuarios(props) {
             <Text
                 styleSheet={{
                     margin: '12px 15px',
-                    paddingLeft: '5px',
+                    padding:'4px 8px', 
+                    borderRadius:'15px',
                     position: 'absolute',
-                    top: '14vh',
-                    color: 'black',
+                    top: '15.1vh',
+                    color: 'white',
+                    backgroundColor: 'rgb(40,40, 40)'
                 }}
                 tag="span"
             >
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white'}}>Nome: {infos.name}</p>
+                Nome: {infos.name}
             </Text>
 
         </Box>
