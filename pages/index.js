@@ -52,13 +52,15 @@ export default function PaginaInicial() {
     const router = useRouter();
 
     const [username, setUsername] = React.useState('');
-    const [nameImg, setNameimg] = React.useState('github');
+    const [nameImg, setNameimg] = React.useState('');
     const [validar, setValidar] = React.useState();
     const [data, setData] = React.useState({ followers: '---', repositories: '---' });
     const [nameTemp, setnameTemp] = React.useState('empty');
 
     const [title, setTitulo] = React.useState('');
     const text = 'Boas vindas de volta!';
+
+    const myUser = `${appConfig.myUser}fcs`;
 
     React.useEffect(() => {
 
@@ -74,7 +76,7 @@ export default function PaginaInicial() {
 
     const notFound = () => {
         setData({ followers: '---', repositories: '---' })
-        setNameimg('github');
+        setNameimg('');
         setValidar(false);
         setnameTemp('Not Found');
     }
@@ -128,7 +130,7 @@ export default function PaginaInicial() {
 
     const [senha, setSenha] = React.useState(false);
     function validarSenha() {
-        if (appConfig.username.toLowerCase() == "edinaldofcs") {
+        if (username.toLowerCase() == myUser) {
             var senha = prompt('senha: ');
             senha == appRestrict.senha ?
                 router.push('/chat')
@@ -143,48 +145,7 @@ export default function PaginaInicial() {
         <>
             {/* Box de validação do meu usuário */}
             {senha ? (
-                <Box
-                    style={{ zIndex: '999' }}
-                    styleSheet={{
-                        width: '90%',
-                        height: '90%',
-                        backgroundColor: 'black',
-                        position: 'fixed',
-                        transform: 'translate(5%, 5%)',
-                        boxShadow: '0px 0px 5px 0px white',
-                        textAlign:'center'
-                    }}
-
-                >
-                    <Text variant="body3"
-                        onClick={() => {
-                            setSenha(false)
-                        }}
-                        styleSheet={{
-                            marginBottom: '32px',
-                            color: 'white',
-                            height: 'fit-content',
-                            width: 'fit-content',
-                            fontSize: '26px',
-                            cursor: 'pointer',
-                            position:'relative',
-                            float:'right',
-                            marginRight:'10px',
-                        }}
-                    >
-                        x
-                    </Text>
-                    <Image
-                        styleSheet={{
-                            height: '50%',
-                            position:'relative',
-                            left:'50%',
-                            top:'50%',
-                            transform:'translate(-50%,-50%)'
-                        }}
-
-                        src={'https://static.wikia.nocookie.net/2867db19-4840-46c3-a0a0-2a6e9c124b70'} />
-                </Box>
+                <BoxDeValidacao />
             ) : ''}
             {/* Fim Box de validação do meu usuário */}
 
@@ -293,13 +254,26 @@ export default function PaginaInicial() {
                             minHeight: '240px',
                         }}
                     >
-                        <Image
-                            styleSheet={{
-                                borderRadius: '50%',
-                                marginBottom: '16px',
-                            }}
-                            src={`https://github.com/${nameImg}.png`}
-                        />
+                        {nameImg != '' ?
+                            (
+                                <Image
+                                    styleSheet={{
+                                        borderRadius: '50%',
+                                        marginBottom: '16px',
+                                    }}
+                                    src={`https://github.com/${nameImg}.png`}
+                                />
+                            )
+                            : (
+                                <Image
+                                    styleSheet={{
+                                        borderRadius: '50%',
+                                        marginBottom: '16px',
+                                    }}
+                                    src={`https://github.githubassets.com/images/modules/logos_page/Octocat.png`}
+                                />
+                            )}
+
                         <Box
                             styleSheet={{
                                 display: 'flex',
@@ -353,4 +327,51 @@ export default function PaginaInicial() {
             </Box>
         </>
     );
+
+    function BoxDeValidacao() {
+        return (
+            <Box
+                style={{ zIndex: '999' }}
+                styleSheet={{
+                    width: '90%',
+                    height: '90%',
+                    backgroundColor: 'black',
+                    position: 'fixed',
+                    transform: 'translate(5%, 5%)',
+                    boxShadow: '0px 0px 5px 0px white',
+                    textAlign: 'center'
+                }}
+
+            >
+                <Text variant="body3"
+                    onClick={() => {
+                        setSenha(false)
+                    }}
+                    styleSheet={{
+                        marginBottom: '32px',
+                        color: 'white',
+                        height: 'fit-content',
+                        width: 'fit-content',
+                        fontSize: '26px',
+                        cursor: 'pointer',
+                        position: 'relative',
+                        float: 'right',
+                        marginRight: '10px',
+                    }}
+                >
+                    x
+                </Text>
+                <Image
+                    styleSheet={{
+                        height: '50%',
+                        position: 'relative',
+                        left: '50%',
+                        top: '50%',
+                        transform: 'translate(-50%,-50%)'
+                    }}
+
+                    src={'https://static.wikia.nocookie.net/2867db19-4840-46c3-a0a0-2a6e9c124b70'} />
+            </Box>
+        );
+    }
 }
