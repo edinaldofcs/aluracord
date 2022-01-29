@@ -504,7 +504,7 @@ function DadosDosUsuarios(props) {
                 left: '3%',
                 backgroundColor: 'orange',
                 border: '4px solid #ccc',
-                paddingRight: '30px',
+                paddingRight: '20px',
             }}
         >
 
@@ -524,21 +524,23 @@ function DadosDosUsuarios(props) {
 
                 <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '3px', marginLeft: '120px'  }}>Repositorios: {infos.repositories}</p>
 
-                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '10px',  }}>Nome: {infos.name}</p>
+                <p style={{ backgroundColor: 'rgb(40,40, 40)', padding:'4px 8px', borderRadius:'15px', color:'white', marginTop: '12px',  }}>Nome: {infos.name}</p>
 
-            </Text>
-            <Image
+                <Image
                 styleSheet={{
-                    maxHeight: '12vh',
-                    maxWidth: '12vh',
-                    margin: '20px',
+                    Height: '100px',
+                    Width: '100px',
+                    margin: '10px 0px 0px 10px',
                     borderRadius: '50%',
                     border:'2px solid #ccc',
                     position:'absolute',
-                    left:'0'
+                    left:'0',
+                    top:'0'
                 }}
 
                 src={`${infos.avatar}`} />
+            </Text>
+            
             
 
         </Box>
