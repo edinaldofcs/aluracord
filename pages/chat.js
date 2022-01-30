@@ -57,7 +57,7 @@ export default function ChatPage() {
             const mensagem = {
                 //id: listaMensagem.length + 1,
                 de: user,
-                texto: novaMensagem,                
+                texto: novaMensagem,
             };
 
             supabaseClient
@@ -447,7 +447,12 @@ function MessageList(props) {
                                 }}
                                 tag="span"
                             >
-                                {(new Date().toLocaleDateString())} - {mensagem.hora.substr(0, 5)}
+                                {(new Date().toLocaleDateString())} - {parseInt(mensagem.hora.substr(0, 2)) <= 2 ?
+                                    parseInt(mensagem.hora.substr(0, 2)) + 21
+                                    :
+                                    parseInt(mensagem.hora.substr(0, 2)) - 3
+                                }
+                                {mensagem.hora.substr(2, 1)}{mensagem.hora.substr(3, 2)}
                             </Text>
                         </Box>
                         {/* logica para carregar sticker */}

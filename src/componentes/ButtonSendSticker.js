@@ -23,13 +23,13 @@ export function ButtonSendSticker(props) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: appConfig.theme.colors.neutrals[300],
-          filter: isOpen ? 'grayscale(0)' : 'grayscale(1)',
+          backgroundColor: 'gray',
+          filter: isOpen ? 'grayscale(0.5)' : 'grayscale(0)',
           hover: {
-            filter: 'grayscale(0)',
+            backgroundColor:'#069'
           }
         }}
-        label="😋"
+        label={<img src="https://emoji.gg/assets/emoji/4360-itachi-kekw.png" width="50px" height="50px" alt="Itachi_KekW"/>}
         onClick={() => setOpenState(!isOpen)}
       />
       {isOpen && (
